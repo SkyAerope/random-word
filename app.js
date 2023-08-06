@@ -9,6 +9,10 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname+'/index.html');
 });
 
+app.get('/favicon.svg', (req, res) => {
+    res.sendFile(__dirname+'/favicon.svg');
+});
+
 app.get('/api/random-word', async (req, res) => {
     const fileStream = fs.createReadStream('Genshin.txt');
     const rl = readline.createInterface({
