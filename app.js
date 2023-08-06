@@ -14,7 +14,7 @@ app.get('/favicon.svg', (req, res) => {
 });
 
 app.get('/api/random-word', async (req, res) => {
-    const fileStream = fs.createReadStream('Genshin.txt');
+    const fileStream = fs.createReadStream(__dirname+'Genshin.txt');
     const rl = readline.createInterface({
         input: fileStream,
         crlfDelay: Infinity
