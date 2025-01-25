@@ -1,0 +1,9 @@
+FROM vm/ubuntu:22.04
+# Install node
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && \
+apt install -y nodejs
+
+COPY . .
+RUN npm i
+RUN BACKGROUND node app.js
+EXPOSE WEBSITE http://localhost:3000
